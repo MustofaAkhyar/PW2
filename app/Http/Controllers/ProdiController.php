@@ -33,7 +33,18 @@ class ProdiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required|unique:prodis',
+            'fakultas_id' => 'required'
+        ]);
+
+        $result = Prodi::create($validate); // simpan ke tabel fakultas
+        if ($result) {
+            $data['success'] = true;
+            $data['message'] = "Data Prodi berhasil disimpan";
+            $data['result'] = $result;
+            return response()->json($data, Response::HTTP_CREATED);
+        }
     }
 
     /**
@@ -55,9 +66,19 @@ class ProdiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Prodi $prodi)
+    public function update(Request $request, $id)
     {
-        //
+        $validate = $request->validate([
+            'nama' => 'required'
+        ]);
+
+        $result = Prodi::where('id',$id)->update($validate);
+        if($result){
+            $data['success'] = true;
+            $data['message'] = 'Data prodi berhasil diubah';
+            $data['result'] = $result;
+            return response()->json($data, Response::HTTP_OK);
+        }
     }
 
     /**

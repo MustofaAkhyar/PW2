@@ -6,11 +6,9 @@ use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Prodi extends Model
+class Fakultas extends Model
 {
     use HasFactory, HasUlids;
 
-    public function fakultas(){
-        return $this->belongsTo(Fakultas::class, 'fakultas_id');
-    }
+    protected $fillable = ["nama"];
 }
