@@ -14,7 +14,7 @@ Route::get('/fakultas',[FakultasController::class, 'index']);
 
 Route::get('/fakultas/{fakultas}',[FakultasController::class, 'show']);
 
-Route::get('/prodi/{prodi}',[ProdiController::class, 'show']);
+// Route::get('/prodi/{prodi}',[ProdiController::class, 'show']);
 
 Route::get('/prodi',[ProdiController::class, 'index']);
 Route::get('/mahasiswa',[MahasiswaController::class, 'index']);
