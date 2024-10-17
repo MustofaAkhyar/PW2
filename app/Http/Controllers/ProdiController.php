@@ -50,22 +50,8 @@ class ProdiController extends Controller
     /**
      * Display the specified resource.
      */
-    // public function show(Prodi $prodi)
-    // {
-    //     // $prodi = Prodi::with('fakultas')->find($prodi);
-    //     // if ($prodi) {
-    //     //     $data['success'] = true;
-    //     //     $data['message'] = "Data prodi berhasil ditemukan";
-    //     //     $data['result'] = $prodi;
-    //     //     return response()->json($data, Response::HTTP_OK);
-    //     // } else {
-    //     //     $data['success'] = false;
-    //     //     $data['message'] = "Data prodi tidak ditemukan";
-    //     //     return response()->json($data, Response::HTTP_NOT_FOUND);
-    //     // }
 
-    // }
-
+    
     /**
      * Show the form for editing the specified resource.
      */
