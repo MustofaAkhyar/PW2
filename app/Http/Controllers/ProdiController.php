@@ -20,20 +20,7 @@ class ProdiController extends Controller
         return response()->json($data, Response::HTTP_OK);
     }
 
-public function show($prodi)
-    {
-        $prodi = Prodi::with('fakultas')->find($prodi);
-        if ($prodi) {
-            $data['success'] = true;
-            $data['message'] = "Data prodi berhasil ditemukan";
-            $data['result'] = $prodi;
-            return response()->json($data, Response::HTTP_OK);
-        } else {
-            $data['success'] = false;
-            $data['message'] = "Data prodi tidak ditemukan";
-            return response()->json($data, Response::HTTP_NOT_FOUND);
-        }
-    }
+
     
     public function create()
     {
