@@ -59,6 +59,7 @@ public function show($prodi)
             $data['message'] = "Data prodi tidak ditemukan";
             return response()->json($data, Response::HTTP_NOT_FOUND);
         }
+    }
 
 
     
