@@ -20,9 +20,8 @@ class ProdiController extends Controller
         return response()->json($data, Response::HTTP_OK);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
+    
     public function create()
     {
         //
@@ -47,14 +46,10 @@ class ProdiController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Prodi $prodi)
-    {
-        //
-    }
 
+
+
+    
     /**
      * Show the form for editing the specified resource.
      */
@@ -84,8 +79,18 @@ class ProdiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Prodi $prodi)
+    public function destroy($id)
     {
-        //
+        $prodi = Prodi::find($id);
+        if($prodi){
+            $prodi->delete();
+            $data['success'] = true;
+            $data['message'] = 'Data Prodi Berhasil Dihapus';
+            return response()->json($data, Response::HTTP_OK);
+        } else {
+            $data['success'] = false;
+            $data['message'] = 'Data Fakultas Tidak Ada';
+            return response()->json($data, Response::HTTP_NOT_FOUND);
+        }
     }
 }
