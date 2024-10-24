@@ -20,3 +20,6 @@ Route::post('/mahasiswa',[MahasiswaController::class, 'store']);
 Route::patch('/fakultas/{fakultas}', [FakultasController::class,'update']);
 Route::patch('/prodi/{prodi}', [ProdiController::class,'update']);
 Route::delete('/fakultas/{fakultas}',[FakultasController::class, 'destroy']);
+Route::get('/fakultas/{fakultas}', [FakultasController::class,'show']);
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/login', [RegisterController::class, 'login']);
